@@ -40,6 +40,7 @@
    k = \begin{cases} n, & n < 10 \\\\ \lfloor n/10 \rfloor, & n \geq 10 \end{cases}
    $$
 
+
    где $\lfloor \cdot \rfloor$ — целая часть числа.
 
 2. **Ширина интервала** $\Delta$:
@@ -108,6 +109,7 @@ $$M = a_i + \Delta \cdot \frac{h_i - h_{i-1}}{(h_i - h_{i-1}) + (h_i - h_{i+1})}
    $$
    F_n(x) = \begin{cases} 0, & x < X_{(1)} \\\\ \frac{k}{n}, & X_{(k)} \leq x < X_{(k+1)}, \quad k = 1, 2, \dots, n-1 \\\\ 1, & x \geq X_{(n)} \end{cases}
    $$
+
 
 3. **Построение графика:**
    - Полученные значения образуют **ступенчатую** (разрывную) функцию
