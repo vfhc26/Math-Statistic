@@ -36,10 +36,7 @@
 
 1. **Определение числа интервалов** $k$:
    
-   $$
-   k = \begin{cases} n, & n < 10 \\\\ \lfloor n/10 \rfloor, & n \geq 10 \end{cases}
-   $$
-
+   $$ k = \left\{ \begin{matrix} n, & n < 10 \\ \lfloor n/10 \rfloor, & n \geq 10 \end{matrix} \right.$$
 
    где $\lfloor \cdot \rfloor$ — целая часть числа.
 
@@ -106,9 +103,13 @@ $$M = a_i + \Delta \cdot \frac{h_i - h_{i-1}}{(h_i - h_{i-1}) + (h_i - h_{i+1})}
    $$X_{(1)} \leq X_{(2)} \leq ... \leq X_{(n)}$$
 
 2. **Подсчёт функции $F_n(x)$:**
-   $$
-   F_n(x) = \begin{cases} 0, & x < X_{(1)} \\\\ \frac{k}{n}, & X_{(k)} \leq x < X_{(k+1)}, \quad k = 1, 2, \dots, n-1 \\\\ 1, & x \geq X_{(n)} \end{cases}
-   $$
+   $$ F_n(x) = \left\{ 
+   \begin{matrix} 
+   0, & x < X_{(1)} & \\ 
+   \frac{k}{n}, & X_{(k)} \leq x < X_{(k+1)}, & \quad k = 1, ... , n-1 \\ 
+   1, & x \geq X_{(n)} & 
+   \end{matrix} \right. $$
+
 
 
 3. **Построение графика:**
