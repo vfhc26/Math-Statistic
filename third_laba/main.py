@@ -1,5 +1,6 @@
 import pandas as pd
 from scipy.stats import chi2
+from pathlib import Path
 class Confidents_limits:
     def __init__(self, path, Q, type):
         self._file_name= path
@@ -32,16 +33,12 @@ class Confidents_limits:
             return n * S_2 / X_lower, n * S_2 / X_upper
     def stats(self):
         [lower, upper] = self.limits()
-        if self._type == 'lower':
-            print(f"[{lower}, {upper}]")
-        elif self._type == 'upper':
-            print(f'[{lower}, {upper}]')
-        else:
-            print(f'[{lower}, {upper}]')
+        print(f"[{lower}, {upper}]")
 
 
 def main():
-    FILENAME = 'r3z2.csv'
+    DIR = Path(__file__).resolve().parent
+    FILENAME = DIR / 'r3z2.csv'
     Q = 0.975
     LIMITS = 'lower'
     cl = Confidents_limits(FILENAME, Q, LIMITS)
