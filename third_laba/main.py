@@ -1,6 +1,7 @@
 import pandas as pd
 from scipy.stats import chi2
 from pathlib import Path
+
 class Confidents_limits:
     def __init__(self, path, Q, type):
         self._file_name= path
@@ -22,11 +23,9 @@ class Confidents_limits:
         if self._type == 'lower':
             X_crit = chi2.ppf(1 - alpha, df)
             return n * S_2 / X_crit, float('inf')
-            
         elif self._type == 'upper':
             X_crit = chi2.ppf(alpha, df)
             return float('-inf'), n * S_2 / X_crit
-            
         else:
             X_lower = chi2.ppf(1 - alpha / 2, df) 
             X_upper = chi2.ppf(alpha / 2, df)
@@ -34,7 +33,6 @@ class Confidents_limits:
     def stats(self):
         [lower, upper] = self.limits()
         print(f"[{lower}, {upper}]")
-
 
 def main():
     DIR = Path(__file__).resolve().parent
